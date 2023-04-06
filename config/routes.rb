@@ -1,14 +1,10 @@
 Rails.application.routes.draw do
-  get 'restaurant/index'
-  get 'restaurant/show'
-  get 'restaurant/create'
-  get 'restaurant/destroy'
-  get 'restaurant_pizzas/index'
-  get 'restaurant_pizzas/create'
-  get 'pizzas/index'
-  get 'pizzas/show'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  #resources :restaurant_pizzas
+  #resources :restaurants
+  #resources :pizzas
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :restaurant_pizzas, only: [:create]
+  resources :restaurants, only: [:index, :show, :destroy]
+  resources :pizzas, only: [:index]
+
 end
